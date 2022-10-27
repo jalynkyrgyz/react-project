@@ -1,33 +1,22 @@
 import React from 'react'
 import './App.css';
+import Content from './components/Content';
+import Header from './components/Header';
+import Sidebar from './components/Sidebar';
+
 
 const  App = () => {
   return (
-    <div className="App">
-      <div><Header/></div>
-      <h1>Starting React</h1>
-      <ul>
-        <li>fo</li>
-        
-      </ul>
+    <div className="app-wrapper">
+      <Header/>
+      <Sidebar/>
+      <Content/>      
     </div>
   );
 }
 
 export default App;
 
-const  Header = () => {
-  return (
-    <div className="App">
-      <h1>HEader </h1>
-      <ul>
-        <li>fo</li>
-        <li>fo</li>
-        <li>fo</li>
-        
-      </ul>
-    </div>
-  );
-}
+
 
 
