@@ -1,9 +1,10 @@
 import React from 'react'
+import styles from './Header.module.css'
 
 const Header = () => {
   return (
-      <header className='header'>
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQij80KOmtJeYBTsZC1U_xS0ulDKEfwGJ31Fg&usqp=CAU" alt="" />
+      <header className={styles.header}>
+          <img src="https://www.freelogodesign.org/Content/img/logo-ex-7.png" alt="" />
       </header>
     
   )

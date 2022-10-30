@@ -1,17 +1,15 @@
 import React from 'react'
+import classes from './Sidebar.module.css'
 
 const Sidebar = () => {
   return (
-    <nav className='nav'>
-        <ul>
-          <li><a href="#s">Profile</a></li>
-          <li><a href="#s">Messages</a></li>
-          <li><a href="#s">News</a></li>
-          <li><a href="#s">Music</a></li>
-          <li><a href="#s">Settings</a></li>
-          
-        </ul>
-      </nav>
+    <nav className={classes.nav}>        
+          <div className={`${classes.item} ${classes.active}`}><a>Profile</a></div>
+          <div className={classes.item}><a>Messages</a></div>
+          <div className={classes.item}><a>News</a></div>
+          <div className={classes.item}><a>Music</a></div>
+          <div className={classes.item}><a>Settings</a></div>        
+    </nav>
   )
 }
 
