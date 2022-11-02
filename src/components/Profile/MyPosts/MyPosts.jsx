@@ -12,9 +12,7 @@ const MyPosts = () => {
         </div>
         <div className={styles.posts}>
             <Post message = 'Hi? how are you?' counter = '15'/>
-            <Post message = 'It is my first post'/>
-            
-           
+            <Post message = 'It is my first post'counter = '20'/>       
         </div>
     </div>
   )
