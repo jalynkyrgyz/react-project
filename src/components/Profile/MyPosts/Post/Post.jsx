@@ -11,8 +11,8 @@ const Post = (props) => {
             <span>like {props.counter}</span>
         </div>
 
-        <input type="text" value='5' />
-        <input type="text" value='6' />
+        {/* <input type="text" value='5' />
+        <input type="text" value='6' /> */}
     </div>
   )
 }
