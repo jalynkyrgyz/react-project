@@ -2,7 +2,16 @@ import React from 'react'
 import styles from './MyPosts.module.css'
 import Post from './Post/Post'
 
-const MyPosts = () => {
+const MyPosts = (props) => {
+
+  let posts = [
+    {id:1, message: 'Hi, how are you?', likesCount: 12},
+    {id:2, message: 'Tt\'s my first post!!!', likesCount: 11},
+  ]
+
+  let postsElements = posts.map((post)=> {
+    return <Post message={post.message} likesCount={post.likesCount} />
+  })
   return (
     <div className={styles.post}>
         <h3>My Posts</h3> 
@@ -15,8 +24,7 @@ const MyPosts = () => {
           </div>            
         </div>
         <div className={styles.posts}>
-            <Post message = 'Hi? how are you?' counter = '15'/>
-            <Post message = 'It is my first post'counter = '20'/>       
+            {postsElements}               
         </div>
     </div>
   )

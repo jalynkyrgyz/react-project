@@ -8,7 +8,7 @@ const Post = (props) => {
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgpAXlwU5GVNw-WrWDoZfltd-2hoO8-Npj8g&usqp=CAU" alt="" />
         {props.message}
         <div>
-            <span>like {props.counter}</span>
+            <span>like {props.likesCount}</span>
         </div>
 
         {/* <input type="text" value='5' />
