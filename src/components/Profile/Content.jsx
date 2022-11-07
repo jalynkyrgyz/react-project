@@ -4,12 +4,13 @@ import MyPosts from './MyPosts/MyPosts'
 import ProfileInfo from './ProfileInfo/ProfileInfo'
 
 
-const Content = () => {
- 
+const Content = (props) => { 
+  
+
   return (
     <main className={styles.main}>
-      <ProfileInfo/> 
-      <MyPosts />             
+      <ProfileInfo dialogs = {props.dialogs} messages = {props.messages} /> 
+      <MyPosts posts = {props.posts} />             
     </main>
   )
 }
