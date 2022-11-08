@@ -7,10 +7,11 @@ import ProfileInfo from './ProfileInfo/ProfileInfo'
 const Content = (props) => { 
   
 
+
   return (
     <main className={styles.main}>
-      <ProfileInfo dialogs = {props.dialogs} messages = {props.messages} /> 
-      <MyPosts posts = {props.posts} />             
+      <ProfileInfo /> 
+      <MyPosts posts = {props.postsState.posts} />             
     </main>
   )
 }
