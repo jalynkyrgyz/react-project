@@ -1,9 +1,15 @@
 .header {
     grid-area: h;
     background-color: green;
+    
+  }
+
+  .header_setting {
+    display: flex;
+    gap: 20px;
   }
   
-  .header img {
+  .header_setting img {
     padding-top: 20px;
     padding-left: 10px;
     width: 50px;

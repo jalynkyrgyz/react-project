@@ -6,6 +6,7 @@ import Content from './components/Profile/Content'
 import Dialogs from './components/Dialogs/Dialogs';
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import News from './components/News/News';
+import Friends from './components/Friends/Friends';
 
 const  App = (props) => {
 
@@ -19,8 +20,9 @@ const  App = (props) => {
             <Route path='/profile' element={<Content postsState = {props.state.profilesPage} />}/>
             <Route path='/dialogs' element={<Dialogs dialogsState ={props.state.dialogsPage}  />}/>
             <Route path='/news' element={<News/>}/>
-
+            <Route path='/friends' element={<Friends/>}/>
           </Routes>    
+         
         </div>    
       </div>
     </Router>

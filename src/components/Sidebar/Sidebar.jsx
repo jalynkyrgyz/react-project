@@ -4,7 +4,8 @@ import {NavLink} from 'react-router-dom'
 
 const Sidebar = () => {
   return (
-    <nav className={classes.nav}>        
+    <nav className={classes.nav}>   
+    <h3>I am sidebar</h3>     
           <div className={classes.item}>
             <NavLink to='profile' style={({ isActive }) => ({ 
                             color: isActive ? 'gold' : 'white' })}>Profile</NavLink>
@@ -24,7 +25,13 @@ const Sidebar = () => {
           <div className={classes.item}>
             <NavLink to='settings' style={({ isActive }) => ({ 
                             color: isActive ? 'gold' : 'white' })}>Settings</NavLink>
-          </div>        
+          </div>  
+          <div className={classes.item}>
+            <NavLink to='friends' style={({ isActive }) => ({ 
+                            color: isActive ? 'gold' : 'white' })}>Friends</NavLink>
+          </div>
+
+
     </nav>
   )
 }
