@@ -20,10 +20,13 @@ const  App = (props) => {
             <Route path='/profile' element={<Content postsState = {props.state.profilesPage} />}/>
             <Route path='/dialogs' element={<Dialogs dialogsState ={props.state.dialogsPage}  />}/>
             <Route path='/news' element={<News/>}/>
-            <Route path='/friends' element={<Friends/>}/>
-          </Routes>    
-         
+            {/* <Route path='/friends' element={<Friends/>}/> */}
+          </Routes>            
+        </div>
+        <div className='app-wrapper-friend'>
+          <Friends/>
         </div>    
+        
       </div>
     </Router>
     

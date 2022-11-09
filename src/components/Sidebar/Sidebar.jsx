@@ -26,10 +26,10 @@ const Sidebar = () => {
             <NavLink to='settings' style={({ isActive }) => ({ 
                             color: isActive ? 'gold' : 'white' })}>Settings</NavLink>
           </div>  
-          <div className={classes.item}>
+          {/* <div className={classes.item}>
             <NavLink to='friends' style={({ isActive }) => ({ 
                             color: isActive ? 'gold' : 'white' })}>Friends</NavLink>
-          </div>
+          </div> */}
 
 
     </nav>

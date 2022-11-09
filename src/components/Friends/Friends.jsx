@@ -3,8 +3,13 @@ import styles from './Friends.module.css'
 
 const Friends = () => {
   return (
-    <div className={styles.firends}>
-      Friends from Friends component
+    <div className={styles.friends}>
+       Friends 
+      <div className={styles.friend}>
+        <a href="#">Dimych</a>
+        <a href="#">Sveta</a>
+        <a href="#">Valera</a>
+      </div>
     </div>
   )
 }

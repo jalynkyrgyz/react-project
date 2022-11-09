@@ -1,0 +1,14 @@
+.friends {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+  
+}
+
+.friend {
+    display: flex;
+    font-size: 12px;
+    color: blue;
+    gap: 20px;
+   
+}
