@@ -3,7 +3,7 @@ import styles from './MyPosts.module.css'
 import Post from './Post/Post'
 
 const MyPosts = (props) => {
-
+  
   let postsElements = props.posts.map((post)=> {
     return <Post message={post.message} likesCount={post.likesCount} />
   })
@@ -13,7 +13,7 @@ const MyPosts = (props) => {
   let addPost = ()=> {
 
     let text = newPostElement.current.value
-    alert(text)
+    props.addPost(text)
   }
 
   return (
