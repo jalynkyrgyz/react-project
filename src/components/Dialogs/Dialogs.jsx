@@ -17,13 +17,10 @@ const Dialogs = (props) => {
 
   let newMessage = React.createRef()
 
-  let addNewMessage = () => {
+  let addMessage = () => {
     let messageText = newMessage.current.value 
-    alert(messageText)
+    props.addMessage(messageText)
   }
-
-  
-
 
   return (
     <div className={styles.dialogs}>
@@ -35,7 +32,7 @@ const Dialogs = (props) => {
        </div>
        <div>
         <textarea ref={newMessage}></textarea>
-        <button onClick={addNewMessage}>Add Message</button>
+        <button onClick={addMessage}>Add Message</button>
        </div>
        
     </div>
