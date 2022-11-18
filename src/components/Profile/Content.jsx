@@ -9,7 +9,10 @@ const Content = (props) => {
   return (
     <main className={styles.main}>
       <ProfileInfo /> 
-      <MyPosts posts = {props.postsState.posts} addPost = {props.addPost} />             
+      <MyPosts posts = {props.profilePage.posts}
+               newPostText = {props.profilePage.newPostText}
+               updateNewPostText = {props.updateNewPostText}
+               addPost = {props.addPost} />             
     </main>
   )
 }
