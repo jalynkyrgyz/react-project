@@ -25,26 +25,24 @@ let state = {
             {id:3, message: "Yohey"},
             {id:4, message: "Yohe"},
             {id:5, message: "Yo"},
-          ]
-    }
-    
+          ],
+        newMessageText: 'it-Kamasutra.com'
+    }    
   }
 
  window.state = state
 
-  export let addMessage = (postMessage) => {
+  export let addMessage = () => {
     let newMessage = {
         id:6,
-        message:postMessage
+        message:state.dialogsPage.newMessageText
     }
-
     state.dialogsPage.messages.push(newMessage)
-
+    state.dialogsPage.newMessageText = ''
     rerenderEntireTree(state)
   }
 
-  export let addPost = () => {
-    
+  export let addPost = () => {    
     let newPost = {
         id: 3,
         message: state.profilesPage.newPostText,
@@ -60,6 +58,11 @@ let state = {
     rerenderEntireTree(state)
   }
 
+  
+  export let updateNewMessage = (newMessage) => {
+    state.dialogsPage.newMessageText = newMessage
+    rerenderEntireTree(state)
+  }
 
   export default state
   

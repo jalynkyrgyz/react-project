@@ -18,8 +18,14 @@ const Dialogs = (props) => {
   let newMessage = React.createRef()
 
   let addMessage = () => {
-    let messageText = newMessage.current.value 
-    props.addMessage(messageText)
+    // let messageText = newMessage.current.value 
+    props.addMessage()
+    // props.updateNewMessage('')
+  }
+
+  let onMessageChange = ()=> {
+    let messageText = newMessage.current.value
+    props.updateNewMessage(messageText)
   }
 
   return (
@@ -31,7 +37,11 @@ const Dialogs = (props) => {
         {messagesElements}
        </div>
        <div>
-        <textarea ref={newMessage}></textarea>
+        <textarea
+         onChange={onMessageChange}
+         ref={newMessage}
+         value = {props.dialogsState.newMessageText} />
+
         <button onClick={addMessage}>Add Message</button>
        </div>
        
