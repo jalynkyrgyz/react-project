@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { addMessage, addPost, updateNewPostText, updateNewMessage, subscribe } from './redux/state';
-import state from './redux/state';
+// import { addMessage, addPost, updateNewPostText, updateNewMessage, subscribe } from './redux/state';
+import store from './redux/state';
 
 // addPost("Samuraj js")
 
@@ -13,17 +13,17 @@ let rerenderEntireTree = (state)=> {
   root.render(  
     <React.StrictMode>
       <App state = {state}
-           addPost = {addPost}        
-           updateNewPostText = {updateNewPostText} 
+           addPost = {store.addPost.bind(store)}        
+           updateNewPostText = {store.updateNewPostText.bind(store)} 
 
-           addMessage = {addMessage}
-           updateNewMessage = {updateNewMessage}
+           addMessage = {store.addMessage.bind(store)}
+           updateNewMessage = {store.updateNewMessage.bind(store)}
       />
     </React.StrictMode>
   );
 }
 
-rerenderEntireTree(state)
+rerenderEntireTree(store.getState())
 
-subscribe(rerenderEntireTree);
+store.subscribe(rerenderEntireTree);
 
