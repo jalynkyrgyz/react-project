@@ -30,12 +30,17 @@ let store = {
         newMessageText: 'it-Kamasutra.com'
     }    
   },
-  getState(){
-    return this._state
-  },
   _callSubscriber() {
     console.log("State changed");
   },
+
+  getState(){
+    return this._state
+  },
+  subscribe (observer) {
+    this._callSubscriber = observer
+  },
+  
   addMessage (){
     let newMessage = {
         id:6,
@@ -46,7 +51,7 @@ let store = {
     this._callSubscriber(this._state)
   },
 
- addPost () {    
+ /*addPost () {    
     let newPost = {
         id: 3,
         message: this._state.profilesPage.newPostText,
@@ -61,15 +66,40 @@ let store = {
     this._state.profilesPage.newPostText = newText
     this._callSubscriber(this._state)
   },
-
   
   updateNewMessage  (newMessage) {
     this._state.dialogsPage.newMessageText = newMessage
     this._callSubscriber(this._state)
-  },
-  subscribe (observer) {
-    this._callSubscriber = observer
+  },*/
+
+  dispatch(action){
+    if (action.type === 'ADD-POST'){
+      let newPost = {
+        id: 3,
+        message: this._state.profilesPage.newPostText,
+        likesCount: 0
+      }
+      this._state.profilesPage.posts.push(newPost)
+      this._state.profilesPage.newPostText = ''
+      this._callSubscriber(this._state)
+    } else if (action.type === 'UPDATE-NEW-POST-TEXT'){
+      this._state.profilesPage.newPostText = action.newText
+      this._callSubscriber(this._state)
+    } else if (action.type === 'ADD-MESSAGE') {
+      let newMessage = {
+        id:6,
+        message:this._state.dialogsPage.newMessageText
+      }
+      this._state.dialogsPage.messages.push(newMessage)
+      this._state.dialogsPage.newMessageText = ''
+      this._callSubscriber(this._state)
+    } else if (action.type === 'UPDATE-NEW-MESSAGE') {
+      this._state.dialogsPage.newMessageText = action.newMessage
+      this._callSubscriber(this._state)
+    }
   }
+
+  
 
 }
 export default store
