@@ -32,7 +32,8 @@ let store = {
             {id:4, message: "Yohe"},
             {id:5, message: "Yo"},
           ],
-        newMessageText: 'it-Kamasutra.com'
+        newMessageText: 'it-Kamasutra.com',
+        // newMEssageBody: ''
     }    
   },
   _callSubscriber() {
