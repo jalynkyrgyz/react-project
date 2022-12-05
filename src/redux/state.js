@@ -32,8 +32,8 @@ let store = {
             {id:4, message: "Yohe"},
             {id:5, message: "Yo"},
           ],
-        newMessageText: 'it-Kamasutra.com',
-        // newMEssageBody: ''
+        newMessageText: 'it-Kamasutra.com'
+        // newMessageBody: ''
     }    
   },
   _callSubscriber() {
@@ -91,7 +91,7 @@ let store = {
     } else if (action.type === UPDATE_NEW_POST_TEXT){
       this._state.profilesPage.newPostText = action.newText
       this._callSubscriber(this._state)
-    } else if (action.type === ADD_MESSAGE) {
+    }   else if (action.type === ADD_MESSAGE) {
       let newMessage = {
         id:6,
         message:this._state.dialogsPage.newMessageText
@@ -103,14 +103,26 @@ let store = {
       this._state.dialogsPage.newMessageText = action.newMessage
       this._callSubscriber(this._state)
     }
-  }
-
+    
+    
+    
+    /*else if (action.type === UPDATE_NEW_MESSAGE) {
+      this._state.dialogsPage.newMessageBody = action.body
+      this._callSubscriber(this._state)
+    } else if (action.type === ADD_MESSAGE ) {
+      let body = this._state.dialogsPage.newMessageBody
+      this._state.dialogsPage.newMessageBody = ''
+      this._state.dialogsPage.messages.push({id:6, message: body})
+      this._callSubscriber(this._state)
+    }    */
+    
   
+
+  } 
 
 }
 
 export const addPostActionCreator = ()=> ({type: ADD_POST})
-
 export const updateNewPostTextActionCreator = (text)=> ({
     type: UPDATE_NEW_POST_TEXT,
     newText: text
@@ -118,7 +130,6 @@ export const updateNewPostTextActionCreator = (text)=> ({
 
 
 export const addMessageActionCreator = ()=> ({type: ADD_MESSAGE})
-
 export const updateNewMessageActionCreator = (messageText) => {
   return {
     type: UPDATE_NEW_MESSAGE, newMessage:messageText

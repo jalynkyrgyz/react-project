@@ -4,14 +4,14 @@ import Header from './components/Header/Header'
 import Sidebar from './components/Sidebar/Sidebar'
 import Content from './components/Profile/Content'
 import Dialogs from './components/Dialogs/Dialogs';
-import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import News from './components/News/News';
 import Friends from './components/Friends/Friends';
 
 const  App = (props) => {
 
   return (
-    <Router>
+    // <Router>
       <div className="app-wrapper">
         <Header/>
         <Sidebar/>
@@ -25,10 +25,11 @@ const  App = (props) => {
               />}/>
 
             <Route path='/dialogs' 
-             element={<Dialogs
+             element={<Dialogs 
+              // store={props.store}
               dialogsState ={props.state.dialogsPage}
-              newMessageText={props.newMessageText}
-              dispatch = {props.dispatch}             
+              // newMessageText={props.newMessageText}
+              dispatch = {props.dispatch}                     
             />}/>
 
             <Route path='/news' element={<News/>}/>
@@ -41,7 +42,7 @@ const  App = (props) => {
         </div>    
         
       </div>
-    </Router>
+    // </Router>
     
   );
 }

@@ -4,15 +4,18 @@ import './index.css';
 import App from './App';
 // import { addMessage, addPost, updateNewPostText, updateNewMessage, subscribe } from './redux/state';
 import store from './redux/state';
+import { BrowserRouter } from 'react-router-dom';
 
 // addPost("Samuraj js")
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-let rerenderEntireTree = (state)=> {
-    
+let rerenderEntireTree = (state)=> {    
   root.render(  
     <React.StrictMode>
-      <App state = {state} dispatch = {store.dispatch.bind(store)}/>
+      <BrowserRouter>
+        <App state = {state} dispatch = {store.dispatch.bind(store)} />
+      </BrowserRouter>
+      
     </React.StrictMode>
   );
 }
