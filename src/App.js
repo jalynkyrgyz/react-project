@@ -9,7 +9,7 @@ import News from './components/News/News';
 import Friends from './components/Friends/Friends';
 
 const  App = (props) => {
-
+debugger
   return (
     // <Router>
       <div className="app-wrapper">
