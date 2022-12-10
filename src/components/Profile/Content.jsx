@@ -1,17 +1,18 @@
 import React from 'react'
 import styles from './Content.module.css'
-import MyPosts from './MyPosts/MyPosts'
+import MyPostsContainer from './MyPosts/MyPostsContainer'
 import ProfileInfo from './ProfileInfo/ProfileInfo'
 
 
 const Content = (props) => { 
-  
+  debugger
   return (
     <main className={styles.main}>
       <ProfileInfo /> 
-      <MyPosts posts = {props.profilePage.posts}
-               newPostText = {props.profilePage.newPostText}
-               dispatch = {props.dispatch} />             
+      <MyPostsContainer store={props.store}/>
+
+      {/* <MyPosts posts = {props.profilePage.posts} newPostText = {props.profilePage.newPostText}  dispatch = {props.dispatch} />   */}
+
     </main>
   )
 }

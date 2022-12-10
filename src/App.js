@@ -9,7 +9,7 @@ import News from './components/News/News';
 import Friends from './components/Friends/Friends';
 
 const  App = (props) => {
-debugger
+
   return (
     // <Router>
       <div className="app-wrapper">
@@ -20,8 +20,10 @@ debugger
             
             <Route path='/profile' 
              element={<Content
-             profilePage = {props.state.profilesPage}
-             dispatch = {props.dispatch}
+              store = {props.store}
+            //  profilePage = {props.state.profilesPage}
+            //  dispatch = {props.dispatch}
+
               />}/>
 
             <Route path='/dialogs' 
