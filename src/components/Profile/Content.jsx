@@ -5,7 +5,7 @@ import ProfileInfo from './ProfileInfo/ProfileInfo'
 
 
 const Content = (props) => { 
-  debugger
+  
   return (
     <main className={styles.main}>
       <ProfileInfo /> 

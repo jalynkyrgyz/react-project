@@ -4,11 +4,11 @@ import MyPosts from './MyPosts'
 
 
 const MyPostsContainer = (props) => { 
-  debugger
+  
   let state = props.store.getState()
 
   let addPost = ()=> {
-        props.store.dispatch(addPostActionCreator())      
+    props.store.dispatch(addPostActionCreator())      
   }
 
   let onPostChange = (text) => {

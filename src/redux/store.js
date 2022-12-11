@@ -31,8 +31,8 @@ let store = {
             {id:4, message: "Yohe"},
             {id:5, message: "Yo"},
           ],
-        newMessageText: 'it-Kamasutra.com'
-        // newMessageBody: ''
+        // newMessageText: 'it-Kamasutra.com'
+        newMessageBody: ''
     },
     sidebar: {}  
   },
