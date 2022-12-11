@@ -3,10 +3,11 @@ import './App.css';
 import Header from './components/Header/Header'
 import Sidebar from './components/Sidebar/Sidebar'
 import Content from './components/Profile/Content'
-import Dialogs from './components/Dialogs/Dialogs';
+
 import { Routes, Route } from 'react-router-dom';
 import News from './components/News/News';
 import Friends from './components/Friends/Friends';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
 
 const  App = (props) => {
 
@@ -19,13 +20,7 @@ const  App = (props) => {
           <Routes>            
             <Route path='/profile' element={<Content store = {props.store}/>}/>
 
-            <Route path='/dialogs' 
-             element={<Dialogs 
-              store={props.store}
-              // dialogsState ={props.state.dialogsPage}
-              // newMessageText={props.newMessageText}
-              // dispatch = {props.dispatch}                     
-            />}/>
+            <Route path='/dialogs' element={<DialogsContainer store={props.store}/>}/>
 
             <Route path='/news' element={<News/>}/>
             {/* <Route path='/friends' element={<Friends/>}/> */}
