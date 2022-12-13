@@ -9,7 +9,7 @@ const Content = (props) => {
   return (
     <main className={styles.main}>
       <ProfileInfo /> 
-      <MyPostsContainer store={props.store}/>
+      <MyPostsContainer />
 
       {/* <MyPosts posts = {props.profilePage.posts} newPostText = {props.profilePage.newPostText}  dispatch = {props.dispatch} />   */}
 

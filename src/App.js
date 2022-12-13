@@ -18,9 +18,9 @@ const  App = (props) => {
         <Sidebar/>
         <div className='app-wrapper-content'>
           <Routes>            
-            <Route path='/profile' element={<Content store = {props.store}/>}/>
+            <Route path='/profile' element={<Content />}/>
 
-            <Route path='/dialogs' element={<DialogsContainer store={props.store}/>}/>
+            <Route path='/dialogs' element={<DialogsContainer />}/>
 
             <Route path='/news' element={<News/>}/>
             {/* <Route path='/friends' element={<Friends/>}/> */}
