@@ -5,7 +5,7 @@ import App from './App';
 // import { addMessage, addPost, updateNewPostText, updateNewMessage, subscribe } from './redux/state';
 import store from './redux/reduxStore';
 import { BrowserRouter } from 'react-router-dom';
-import StoreContext from './storeContext';
+import {Provider} from './storeContext';
 
 // addPost("Samuraj js")
 
@@ -14,20 +14,18 @@ let rerenderEntireTree = (state)=> {
   root.render(  
     <React.StrictMode>
       <BrowserRouter>
-        <StoreContext.Provider value={store}>
-          <App 
-          // state = {state} dispatch = {store.dispatch.bind(store)} store = {store} 
-          />
-        </StoreContext.Provider>        
+        <Provider store={store}>
+          <App/>
+        </Provider>        
       </BrowserRouter>      
     </React.StrictMode>
   );
 }
 
-rerenderEntireTree(store.getState())
+rerenderEntireTree()
 
 store.subscribe(()=> {
-  let state = store.getState()
-  rerenderEntireTree(state)
+  // let state = store.getState()
+  rerenderEntireTree()
 }) ;
 
