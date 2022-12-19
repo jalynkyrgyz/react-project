@@ -5,12 +5,12 @@ import App from './App';
 // import { addMessage, addPost, updateNewPostText, updateNewMessage, subscribe } from './redux/state';
 import store from './redux/reduxStore';
 import { BrowserRouter } from 'react-router-dom';
-import {Provider} from './storeContext';
+import {Provider} from 'react-redux';
 
 // addPost("Samuraj js")
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-let rerenderEntireTree = (state)=> {    
+// let rerenderEntireTree = (state)=> {    
   root.render(  
     <React.StrictMode>
       <BrowserRouter>
@@ -20,12 +20,12 @@ let rerenderEntireTree = (state)=> {
       </BrowserRouter>      
     </React.StrictMode>
   );
-}
+// }
 
-rerenderEntireTree()
+// rerenderEntireTree()
 
-store.subscribe(()=> {
-  // let state = store.getState()
-  rerenderEntireTree()
-}) ;
+// store.subscribe(()=> {
+//   // let state = store.getState()
+//   rerenderEntireTree()
+// }) ;
 

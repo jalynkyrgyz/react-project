@@ -2,9 +2,6 @@ import React from 'react'
 import styles from './MyPosts.module.css'
 import Post from './Post/Post'
 
-
-
-
 const MyPosts = (props) => { 
     
   let postsElements = props.posts.map((post)=> {

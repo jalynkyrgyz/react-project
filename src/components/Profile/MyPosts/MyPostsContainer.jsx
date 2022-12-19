@@ -1,11 +1,9 @@
 import React from 'react'
 import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../redux/profileReducer'
 import MyPosts from './MyPosts'
-import StoreContext from '../../../storeContext'
+import {connect} from 'react-redux'
 
-
-const MyPostsContainer = (props) => { 
-  
+/*const MyPostsContainer = (props) => {  
   
   return (
     <StoreContext.Consumer>
@@ -30,6 +28,28 @@ const MyPostsContainer = (props) => {
     </StoreContext.Consumer>
     
   )
+} */
+
+
+let mapStateToProps = (state) => {
+  return {
+    posts: state.profilesPage.posts,
+    newPostText: state.profilesPage.newPostText
+  }
 }
+
+let mapDispatchToProps = (dispatch) => {
+  return {
+    updateNewPostText: (text)=>{
+      let action = updateNewPostTextActionCreator(text)
+      dispatch(action)
+    },
+    addPost: ()=>{
+      dispatch(addPostActionCreator())   
+    }
+  }
+}
+
+const MyPostsContainer = connect(mapStateToProps, mapDispatchToProps)(MyPosts)
 
 export default MyPostsContainer
