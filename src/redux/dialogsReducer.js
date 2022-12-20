@@ -19,23 +19,27 @@ let initialState = {
       {id:5, message: "Yo"},
     ],
   // newMessageText: 'it-Kamasutra.com'  
-  newMessageBody: ""
+  newMessageBody: "it"
 }
 
 
 const dialogsReducer = (state = initialState, action) => {
-    switch (action.type) {
+     
+  switch (action.type) {
         case SEND_MESSAGE:
-            let body = {
-                id:6,
-                message:state.newMessageBody
-              }
-              state.messages.push(body)
-              state.newMessageBody = ''
-              return state
-        case UPDATE_NEW_MESSAGE_BODY:
-            state.newMessageBody = action.body
-            return state
+          let body = state.newMessageBody
+         return {
+            ...state,
+            newMessageBody: '',
+            messages: [...state.messages, {id:6, message:body}]
+            
+          }
+          // let body = {id:6, message:state.newMessageBody }
+        case UPDATE_NEW_MESSAGE_BODY: 
+         return {
+            ...state,
+            newMessageBody: action.body
+          }
         default:
             return state
     }
