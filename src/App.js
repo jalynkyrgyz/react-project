@@ -8,6 +8,7 @@ import { Routes, Route } from 'react-router-dom';
 import News from './components/News/News';
 import Friends from './components/Friends/Friends';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
+import UsersContainer from './components/Users/UsersContainer';
 
 const  App = (props) => {
 
@@ -19,21 +20,16 @@ const  App = (props) => {
         <div className='app-wrapper-content'>
           <Routes>            
             <Route path='/profile' element={<Content />}/>
-
             <Route path='/dialogs' element={<DialogsContainer />}/>
-
             <Route path='/news' element={<News/>}/>
-            {/* <Route path='/friends' element={<Friends/>}/> */}
-
+            <Route path='/users' element={<UsersContainer/>}/>
           </Routes>            
         </div>
         <div className='app-wrapper-friend'>
           <Friends/>
-        </div>    
-        
+        </div>          
       </div>
-    // </Router>
-    
+    // </Router>    
   );
 }
 
