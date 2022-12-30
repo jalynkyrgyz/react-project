@@ -4,17 +4,21 @@ import React from 'react'
 import styles from './Users.module.css'
 import userDefaultPhoto from '../../assets/images/defaultImage.png'
 
-const Users = (props) => {       
-    if (props.users.length === 0) {       
-        axios.get('https://social-network.samuraijs.com/api/1.0/users')
-        .then(response => {        
-            props.setUsers(response.data.items)
-        })       
-    }
+const Users = (props) => {   
+    let getUsers = () => {
+        if (props.users.length === 0) {       
+            axios.get('https://social-network.samuraijs.com/api/1.0/users')
+            .then(response => {        
+                props.setUsers(response.data.items)
+            })       
+        }
+    }    
+    
     
     
   return (   
-  <div className={styles.users}>   
+  <div className={styles.users}>  
+    <button onClick={getUsers} >Get Users</button> 
                 {
                 props.users.map(user => <div key={user.id} className={styles.userItem} >
                     <span className={styles.follow}>

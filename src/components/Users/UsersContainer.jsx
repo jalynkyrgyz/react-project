@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import Users from './Users'
+import Users from './UsersClass'
 import {connect} from 'react-redux'
 import { followActionCreator, setUsersActionCreator, unfollowActionCreator } from '../../redux/usersReducer'
 
