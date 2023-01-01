@@ -33,3 +33,15 @@
     color: orangered;
 
 }
+
+.selectedPage {
+    font-weight: bold;
+    color: yellow;
+}
+
+.pages span {
+    margin-left: 10px;
+    cursor: pointer;
+    border: 1px solid red;
+    border-radius: 50%;
+}
