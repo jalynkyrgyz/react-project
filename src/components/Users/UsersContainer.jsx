@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 import {connect} from 'react-redux'
-import { followActionCreator, setCurrentPageActionCreator, setUsersActionCreator, unfollowActionCreator, setUsersTotalCountActionCreator, setIsFetchingActionCreator } from '../../redux/usersReducer'
+import { follow, setCurrentPage, setUsers, unfollow, setUsersTotalCount, setIsFetching} from '../../redux/usersReducer'
 import axios from 'axios'
 import Users from './Users'
 
@@ -55,29 +55,36 @@ let mapStateToProps = (state) => {
   }
 }
 
-let mapDispatchToProps = (dispatch) => {
-  return {
-    follow:(userId) => {
-      dispatch(followActionCreator(userId))
-    },
-    unfollow: (userId) => {
-      dispatch(unfollowActionCreator(userId))
-    },
-    setUsers: (users)=> {
-      dispatch(setUsersActionCreator(users))
-    },
-    setCurrentPage: (pageNumber) => {
-      dispatch(setCurrentPageActionCreator(pageNumber))
-    },
-    setTotalUsersCount: (totalCount) => {
-      dispatch(setUsersTotalCountActionCreator(totalCount))
-    },
-    toogleIsFetching: (isFetching) => {
-      dispatch(setIsFetchingActionCreator(isFetching))
-    }
-  }
-}
+// let mapDispatchToProps = (dispatch) => {
+//   return {
+//     follow:(userId) => {
+//       dispatch(followActionCreator(userId))
+//     },
+//     unfollow: (userId) => {
+//       dispatch(unfollowActionCreator(userId))
+//     },
+//     setUsers: (users)=> {
+//       dispatch(setUsersActionCreator(users))
+//     },
+//     setCurrentPage: (pageNumber) => {
+//       dispatch(setCurrentPageActionCreator(pageNumber))
+//     },
+//     setTotalUsersCount: (totalCount) => {
+//       dispatch(setUsersTotalCountActionCreator(totalCount))
+//     },
+//     toogleIsFetching: (isFetching) => {
+//       dispatch(setIsFetchingActionCreator(isFetching))
+//     }
+//   }
+// }
 
 
-export default connect (mapStateToProps, mapDispatchToProps)(UsersAPIComponent)
+export default connect (mapStateToProps, {
+  follow:follow,
+  unfollow:unfollow,
+  setUsers: setUsers,
+  setCurrentPage: setCurrentPage,
+  setTotalUsersCount:setUsersTotalCount,
+  toogleIsFetching:setIsFetching
+  })(UsersAPIComponent)
 
