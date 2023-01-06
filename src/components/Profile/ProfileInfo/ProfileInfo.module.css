@@ -1,3 +1,12 @@
 .descriptionBlock {
     padding: 10px;
+    display: flex;
+    border: 2px solid red;
+    width: 60%;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;   
+    margin: 15px;
 }
