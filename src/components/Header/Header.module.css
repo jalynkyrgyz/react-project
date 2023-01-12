@@ -4,13 +4,20 @@
     
   }
 
-  .header_setting {
+  /* .header_setting {
     display: flex;
     gap: 20px;
-  }
+  } */
   
   .header_setting img {
     padding-top: 20px;
     padding-left: 10px;
     width: 50px;
+  }
+
+  .login_block {
+    float: right;
+  }
+  .login_block a {
+    color: white;
   }
