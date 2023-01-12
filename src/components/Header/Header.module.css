@@ -17,7 +17,11 @@
 
   .login_block {
     float: right;
+    color: white;
+    margin-top: 10px;
+    margin-right: 10px;
   }
   .login_block a {
+   
     color: white;
   }
