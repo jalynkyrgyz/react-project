@@ -32,23 +32,30 @@ const Users = (props) => {
                                 </NavLink>                               
                             </div>
                             <div>
-                                {user.followed ? <button className={styles.btn} onClick={()=>{
-                                    followUnfollowAPI.followUser(user.id)
-                                    .then(data => {
-                                        if (data.resultCode === 0) {
-                                            props.unfollow(user.id)
-                                        }
-                                    })                  
+                                {user.followed 
+                                    ? <button className={styles.btn} disabled={props.followingInProgress.some(id=>id === user.id) } onClick={()=>{
+                                        props.toggleFollowingProgress(true, user.id)
+                                        followUnfollowAPI.followUser(user.id)
+                                        .then(data => {
+                                            if (data.resultCode === 0) {
+                                                props.unfollow(user.id)
+                                            }
+                                            props.toggleFollowingProgress(false, user.id)
+                                        })                  
                                     
-                                }} >Unfollow</button> : <button className={styles.btn} onClick={()=>{
-                                    followUnfollowAPI.unfollowUser(user.id)
-                                    .then(data => {
-                                        if (data.resultCode === 0) {
-                                            props.follow(user.id)
-                                    }})    
+                                    }} >Unfollow</button> 
+                                    : <button className={styles.btn} disabled={props.followingInProgress.some(id=>id === user.id)} onClick={()=>{
+                                        props.toggleFollowingProgress(true, user.id)
+                                        followUnfollowAPI.unfollowUser(user.id)                                        
+                                        .then(data => {
+                                            if (data.resultCode === 0) {
+                                                props.follow(user.id)
+                                            }
+                                            props.toggleFollowingProgress(false, user.id)
+                                        })                                           
                                         
-                                        
-                                }}>Follow</button>}                        
+                                    }}>Follow</button>
+                                }                        
                             </div>
                         </span>
                         <span className={styles.userDetail}>
