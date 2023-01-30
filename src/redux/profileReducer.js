@@ -56,13 +56,4 @@ export const getUserProfile = (userId) => (dispatch) => {
 } 
 
 
-// export const getProfile = (userId) =>{
-//     return (dispatch) => {
-//         // let userId = this.props.router.params.userId
-//     usersAPI.getProfile(userId).then(data => {
-//       dispatch(setUserProfile(data))  
-//     })
-//     }
-// }
-
 export default profileReducer
