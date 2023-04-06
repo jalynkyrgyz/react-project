@@ -27,13 +27,10 @@ class ProfileContainer extends React.Component {
        }
     }
     this.props.getUserProfile(userId)    
-    this.props.getStatus(userId)   
-          
+    this.props.getStatus(userId)             
   }
-
  
-  render() {   
-    
+  render() {       
     return (
       <Content {...this.props}  profile= {this.props.profile} status={this.props.status} updateStatus={this.props.updateStatus} />
     )
