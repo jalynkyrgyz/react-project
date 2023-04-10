@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
+
 
 // let arr = [0, ()=>{}]
 // let [a, setA] = arr
@@ -9,6 +10,10 @@ const ProfileStatusWithHook=(props)=>  {
     let setEditMode = stateWithSetState[1]*/
     let [editMode, setEditMode] = useState(false)
     let [status, setStatus] = useState(props.status)
+
+    useEffect(()=>{
+        setStatus(props.status)
+    }, [props.status])
 
     const activateEditMode=()=> {
         setEditMode(true)           
