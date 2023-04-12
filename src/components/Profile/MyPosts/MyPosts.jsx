@@ -5,8 +5,9 @@ import { maxLengthCreator, required } from '../../../utils/validators/validators
 import styles from './MyPosts.module.css'
 import Post from './Post/Post'
 
-const MyPosts = (props) => { 
-    
+const MyPosts = React.memo (props => { 
+    console.log("RENDER");
+ 
   let postsElements = props.posts.map((post)=> {
     return <Post message={post.message} likesCount={post.likesCount} />
   })
@@ -19,12 +20,10 @@ const MyPosts = (props) => {
     <div className={styles.post}>
         <h3>My Posts</h3> 
         <AddNewPostRedux onSubmit={onAddPost}/>
-        <div className={styles.posts}>
-            {postsElements}               
-        </div>
+        <div className={styles.posts}> {postsElements}</div>
     </div>
   )
-}
+})
 
 const maxLength10 = maxLengthCreator(10)
 
@@ -42,6 +41,28 @@ const AddNewPostForm = (props) => {
   )
 }
 
-const AddNewPostRedux = reduxForm({form: "ProfileAddNewPostForm"})(AddNewPostForm)
+let AddNewPostRedux = reduxForm({form: "ProfileAddNewPostForm"})(AddNewPostForm)
 
+// class MyPosts extends Component {
+//   render() {
+//   console.log("RENDER");
+  
+
+//   let postsElements = this.props.posts.map((post)=> {
+//     return <Post message={post.message} likesCount={post.likesCount} />
+//   })
+
+//   let onAddPost = (values) => {
+//     this.props.addPost(values.newPostText)
+//   }
+
+//   return (
+//     <div className={styles.post}>
+//         <h3>My Posts</h3> 
+//         <AddNewPostRedux onSubmit={onAddPost}/>
+//         <div className={styles.posts}> {postsElements}</div>
+//     </div>
+//   )
+// }
+// }
 export default MyPosts
