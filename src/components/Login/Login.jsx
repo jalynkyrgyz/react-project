@@ -24,9 +24,6 @@ const Login = (props) => {
   )
 }
 
-
-
-
 const LoginForm = (props) => {
   return (
       <form onSubmit={props.handleSubmit} >
