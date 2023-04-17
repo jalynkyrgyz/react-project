@@ -1,4 +1,4 @@
-import { legacy_createStore as createStore, combineReducers, applyMiddleware } from 'redux'
+import { legacy_createStore as createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 
 import profileReducer from './profileReducer'
@@ -19,8 +19,11 @@ let reducers = combineReducers({
     app:appReducer
 })
 
-let store = createStore(reducers, applyMiddleware(thunkMiddleware))
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(reducers, composeEnhancers(applyMiddleware(thunkMiddleware)));
 
-window.store = store
+// let store = createStore(reducers, applyMiddleware(thunkMiddleware))
+
+window._store_ = store
 
 export default store
