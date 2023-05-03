@@ -1,3 +1,13 @@
+.paginator {
+    margin: 10px;
+}
+
+.pageNumber {
+    padding: 2px;
+    border: 1px solid grey;
+}
+
+
 .pages span {
     margin-left: 10px;
     cursor: pointer;
@@ -5,7 +15,8 @@
     border-radius: 50%;
 }
 
-.selectedPage {
+.pageNumber.selectedPage {
     font-weight: bold;
+    border-color: black;
     color: yellow;
 }
