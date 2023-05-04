@@ -4,7 +4,9 @@
 
 .pageNumber {
     padding: 2px;
-    border: 1px solid grey;
+    margin:0 5px;
+    border: 1px solid rgb(167, 22, 22);
+    border-radius: 30%;
 }
 
 
