@@ -3,33 +3,32 @@ import Preloader from '../../../common/Preloader/Preloader'
 import styles from './ProfileInfo.module.css'
 import ProfileStatusWithHook from './ProfileStatusWithHook'
 
-const ProfileInfo = (props) => {
-  if (!props.profile) {
+import userPhoto from '../../../assets/images/defaultImage.png'
+
+const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto}) => {
+  if (!profile) {
     return <Preloader/>
   }
-
-
-
+  const onMainPhotoSelected = (e) => {
+    if (e.target.files.length) {
+      savePhoto (e.target.files[0])
+    }
+  }
   return (
     <div>
-        {/* <div>
-            <img src="https://media.istockphoto.com/photos/maldives-tropical-island-picture-id1360554439?b=1&k=20&m=1360554439&s=170667a&w=0&h=-IRAQ28DT0XwLBQ-_gjV3erce0OdvxiWPaa_Ioz95ws=" alt="" />
-        </div>     */}
-            
-        <div className={styles.descriptionBlock}>
-          
+       <div className={styles.descriptionBlock}>          
           <div>
-            <img src={props.profile.photos.large} alt="" />
-            
+            <img src={profile.photos.large || userPhoto } className={styles.mainPhoto} alt=''/>
+            {isOwner && <input type={'file'} onChange={onMainPhotoSelected} />}
           </div>
           <div className={styles.about}>
-            <span className={styles.name}> <b>User:</b>  {props.profile.fullName}</span>
-            <span className={styles.aboutUser}> <b>About me:  </b>   {props.profile.aboutMe}</span>
-            <span className={styles.aboutUser}> <b>My ID Number is:  </b>   {props.profile.userId}</span>
+            <span className={styles.name}> <b>User:</b>  {profile.fullName}</span>
+            <span className={styles.aboutUser}> <b>About me:  </b>   {profile.aboutMe}</span>
+            <span className={styles.aboutUser}> <b>My ID Number is:  </b>   {profile.userId}</span>
           </div>                     
         </div>
         <div className={styles.status}>
-            <ProfileStatusWithHook status={props.status} updateStatus={props.updateStatus} />
+            <ProfileStatusWithHook status={status} updateStatus={updateStatus} />
         </div>  
     </div>
   )

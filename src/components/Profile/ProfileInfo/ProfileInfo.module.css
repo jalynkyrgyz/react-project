@@ -15,3 +15,7 @@
 b {
     color: yellow;
 }
+
+.mainPhoto {
+    max-width: 200px;
+}
