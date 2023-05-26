@@ -1,15 +1,24 @@
 .descriptionBlock, .status {
     margin: 10px;
+    /* margin: 0 auto; */
     padding: 10px;
     display: flex;
+    flex-direction: column;
     border: 2px solid red;
-    width: 60%;
+    width: 90%;
 }
 
-.about {
+.profileData {
+    display: flex;
+}
+
+.about, .jobStatus, .contacts {
     display: flex;
     flex-direction: column;   
-    margin: 15px;
+    margin:0 15px;
+    padding: 5px;
+    border: 2px darkblue solid;
+    
 }
 
 b {
@@ -18,4 +27,17 @@ b {
 
 .mainPhoto {
     max-width: 200px;
+
+}
+
+.photoBlock {
+    margin-bottom: 50px;
+}
+
+
+
+.formSummaryError {
+    border: 1px solid red;
+    padding: 5px;
+    color: white;
 }

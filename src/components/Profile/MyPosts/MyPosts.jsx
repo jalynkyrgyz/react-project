@@ -6,10 +6,10 @@ import styles from './MyPosts.module.css'
 import Post from './Post/Post'
 
 const MyPosts = React.memo (props => { 
-    console.log("RENDER");
+    // console.log("RENDER");
  
   let postsElements = props.posts.map((post)=> {
-    return <Post message={post.message} likesCount={post.likesCount} />
+    return <Post key={post.id} message={post.message} likesCount={post.likesCount} />
   })
 
   let onAddPost = (values) => {
